@@ -28,9 +28,9 @@ jobs:
         bash ./generator.sh
     - name: CMake
       run: |
-        mkdir cmake-build
+        mkdir -p cmake-build
         cd cmake-build
-        cmake ../cimgui/
+        cmake ../cimgui/ -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     - name: Build
       working-directory: cmake-build
       run: |
